@@ -1,0 +1,13 @@
+<h1>student-list works!</h1>
+<table height="200" weight="200" border="2">
+  <tr>
+    <th>NAME</th>
+    <th>AGE</th>
+    <th>CLASS</th>
+  </tr>
+  <tr *ngFor="let student of students">
+    <td>{{ student.name }}</td>
+    <td>{{ student.age }}</td>
+    <td>{{ student.class }}</td>
+  </tr>
+</table>

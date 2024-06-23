@@ -1,0 +1,49 @@
+<p>template-reference works!</p>
+
+<!-- <input type="text" #nameBox placeholder="Enter your name" name="myName" />
+<input type="button" (click)="getName(nameBox.value)" value="click" />
+
+<h2>{{ displayName }}</h2> -->
+
+<!-- <input
+  type="text"
+  (keyup)="getName(nameBox.value)"
+  #nameBox
+  placeholder="Enter your name"
+  name="myName"
+/>
+
+<h2>{{ displayName }}</h2> -->
+
+<!-- <input type="text" #fnameBox placeholder="Enter your name" name="fname" />
+<br />
+<input type="text" #lnameBox placeholder="Enter your lastname" name="lname" />
+<br />
+<input
+  type="button"
+  (click)="getName(fnameBox.value, lnameBox.value)"
+  value="click"
+/>
+
+<h2>{{ displayName }}</h2> -->
+
+<input
+  type="text"
+  (keyup)="getName(fnameBox.value, lnameBox.value)"
+  #fnameBox
+  placeholder="Enter your name"
+  name="fname"
+/>
+<br />
+<input
+  type="text"
+  (keyup)="getName(fnameBox.value, lnameBox.value)"
+  #lnameBox
+  placeholder="Enter your lastname"
+  name="lname"
+/>
+<br />
+
+/>
+
+<h2>{{ displayName }}</h2>

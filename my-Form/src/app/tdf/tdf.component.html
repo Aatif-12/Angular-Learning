@@ -1,0 +1,136 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="bg-primary p-3 text-center">
+        <h2>Template Driven Form</h2>
+      </div>
+      <form #newForm="ngForm" (ngSubmit)="save(newForm)" novalidate>
+        <!-- {{ newForm.value | json }}
+        <hr />
+        {{ std | json }}
+        <hr /> -->
+        <div class="form-group">
+          <label for="">Enter Name:</label>
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            [class.is-invalid]="name.invalid && name.touched"
+            #name="ngModel"
+            required
+            minlength="2"
+            maxlength="15"
+            [(ngModel)]="std.name"
+            placeholder="Enter Your Name"
+            ngModel
+          />
+        </div>
+        <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+          <div *ngIf="name.errors && name.errors['required']">
+            Name is Required
+          </div>
+          <div *ngIf="name.errors && name.errors['minlength']">
+            Name should be minimum 2 characters
+          </div>
+        </div>
+        <!-- Touched = {{ name.touched }}
+        <br />
+        Un-Touched = {{ name.untouched }} -->
+
+        <!-- Valid = {{ name.valid }}
+        <br />
+        Invalid = {{ name.invalid }} -->
+
+        <!-- Dirty = {{ name.dirty }}
+        <br />
+        Pristine = {{ name.pristine }} -->
+
+        <div class="form-group">
+          <label for="">Enter Age:</label>
+          <input
+            type="number"
+            name="age"
+            class="form-control"
+            #age="ngModel"
+            required
+            min="10"
+            max="100"
+            [class.is-invalid]="name.invalid && name.touched"
+            [(ngModel)]="std.age"
+            placeholder="Enter Your Age"
+            ngModel
+          />
+        </div>
+        <div class="alert alert-danger" *ngIf="age.touched && age.invalid">
+          <div *ngIf="age.errors && age.errors['required']">
+            Age is Required
+          </div>
+          <div *ngIf="age.errors && age.errors['min']">
+            Age must be greater and equal to 10
+          </div>
+          <div *ngIf="age.errors && age.errors['max']">
+            Age must be less and equal to 100
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Enter Email:</label>
+          <input
+            type="text"
+            name="email"
+            class="form-control"
+            #email="ngModel"
+            required
+            pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"
+            [class.is-invalid]="name.invalid && name.touched"
+            [(ngModel)]="std.email"
+            placeholder="Enter Your Email"
+            ngModel
+          />
+        </div>
+        <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+          <div *ngIf="email.errors && email.errors['required']">
+            Email is Required
+          </div>
+          <div *ngIf="email.errors && email.errors['pattern']">
+            Email is Invalid
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Enter Password:</label>
+          <input
+            type="text"
+            name="password"
+            class="form-control"
+            #password="ngModel"
+            required
+            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+            [class.is-invalid]="name.invalid && name.touched"
+            [(ngModel)]="std.password"
+            placeholder="Enter Your Email"
+            ngModel
+          />
+        </div>
+        <div
+          class="alert alert-danger"
+          *ngIf="password.touched && password.invalid"
+        >
+          <div *ngIf="password.errors && password.errors['required']">
+            Password is Required
+          </div>
+          <div *ngIf="password.errors && password.errors['pattern']">
+            Please enter Strong password
+          </div>
+        </div>
+        <br />
+        <div class="d-grid">
+          <input
+            type="submit"
+            [class.disabled]="newForm.form.invalid"
+            value="submit"
+            class="btn btn-primary"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
