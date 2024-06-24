@@ -122,6 +122,58 @@
           </div>
         </div>
         <br />
+        <label for="">Gender</label>
+        <div class="form-check">
+          <input
+            type="radio"
+            required
+            class="form-check-input"
+            value="Male"
+            #gender="ngModel"
+            [(ngModel)]="std.gender"
+            name="gender"
+          />
+          <label for="">Male</label>
+        </div>
+        <div class="form-check">
+          <input
+            type="radio"
+            required
+            class="form-check-input"
+            value="Female"
+            #gender="ngModel"
+            [(ngModel)]="std.gender"
+            name="gender"
+          />
+          <label for="">Female</label>
+        </div>
+        <br />
+        <div class="dorm-group">
+          <label for="">Country</label>
+          <select
+            name="country"
+            required
+            #country="ngModel"
+            [(ngModel)]="std.country"
+            [class.is-invalid]="country.invalid && country.touched"
+            class="form-control"
+          >
+            <option value="">Select</option>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <option value="India">India</option>
+            <option value="Austalia">Austalia</option>
+          </select>
+        </div>
+        <div
+          class="alert alert-danger"
+          *ngIf="country.touched && country.invalid"
+        >
+          <div *ngIf="country.errors && country.errors['required']">
+            Country is Required
+          </div>
+        </div>
+        <br />
         <div class="d-grid">
           <input
             type="submit"

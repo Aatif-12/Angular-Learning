@@ -16,4 +16,7 @@ export class TdfComponent {
     // console.log(std);
     console.log(this.std);
   }
+  constructor() { 
+    this.std.country = "";
+  }
 }
