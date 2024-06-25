@@ -19,6 +19,7 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { StudentServiceService } from './services/student-service.service';
 import { StudentsDataComponent } from './students-data/students-data.component';
 import { TimeComponent } from './time/time.component';
+import { ClassesComponent } from './classes/classes.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { TimeComponent } from './time/time.component';
     CustomPipesPipe,
     StudentListComponent,
     StudentsDataComponent,
-    TimeComponent
+    TimeComponent,
+    ClassesComponent
   ],
   imports: [
     BrowserModule,
